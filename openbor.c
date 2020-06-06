@@ -2575,7 +2575,7 @@ void saveasdefault()
     FILE *handle = NULL;
     char path[MAX_BUFFER_LEN] = {""};
     getBasePath(path, "Saves", 0);
-    strcat(path, "default.cfg");
+    strcat(path, "default_6500.cfg");
     handle = fopen(path, "wb");
     if(handle == NULL)
     {
@@ -2624,7 +2624,7 @@ void loadfromdefault()
     FILE *handle = NULL;
     char path[MAX_BUFFER_LEN] = {""};
     getBasePath(path, "Saves", 0);
-    strcat(path, "default.cfg");
+    strcat(path, "default_6500.cfg");
     clearsettings();
     handle = fopen(path, "rb");
     if(handle == NULL)
