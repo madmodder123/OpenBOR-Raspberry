@@ -2511,7 +2511,7 @@ void clearsettings()
     savedata.logo = 0;
     savedata.uselog = 1;
     savedata.debuginfo = 0;
-    savedata.fullscreen = 0;
+    savedata.fullscreen = 1;
 
 	#if WII
     savedata.stretch = 1;
@@ -37800,7 +37800,7 @@ void menu_options_sound()
     soundoptionsMenu = 0;
 }
 
-void menu_options_config()     //  OX. Load from / save to default.cfg. Restore OpenBoR "factory" settings.
+void menu_options_config()     //  OX. Load from / save to default_6500.cfg. Restore OpenBoR "factory" settings.
 {
     int quit = 0;
     int selector = 0;
@@ -37816,20 +37816,20 @@ void menu_options_config()     //  OX. Load from / save to default.cfg. Restore 
 
         if(saved == 1)
         {
-            _menutextm((selector == 0), -3, 0, Tr("Save Settings To Default.cfg%s"), Tr("  Done!"));
+            _menutextm((selector == 0), -3, 0, Tr("Save Settings To default_6500.cfg%s"), Tr("  Done!"));
         }
         else
         {
-            _menutextm((selector == 0), -3, 0, Tr("Save Settings To Default.cfg%s"), "");
+            _menutextm((selector == 0), -3, 0, Tr("Save Settings To default_6500.cfg%s"), "");
         }
 
         if(loaded == 1)
         {
-            _menutextm((selector == 1), -2, 0, Tr("Load Settings From Default.cfg%s"), Tr("  Done!"));
+            _menutextm((selector == 1), -2, 0, Tr("Load Settings From default_6500.cfg%s"), Tr("  Done!"));
         }
         else
         {
-            _menutextm((selector == 1), -2, 0, Tr("Load Settings From Default.cfg%s"), "");
+            _menutextm((selector == 1), -2, 0, Tr("Load Settings From default_6500.cfg%s"), "");
         }
 
         if(restored == 1)
@@ -37894,7 +37894,7 @@ void menu_options_config()     //  OX. Load from / save to default.cfg. Restore 
 
             case 1:
                 loadfromdefault();
-                //borShutdown(2, "\nSettings Loaded From Default.cfg. Restart Required.\n\n");
+                //borShutdown(2, "\nSettings Loaded From default_6500.cfg. Restart Required.\n\n");
                 init_videomodes(0);
                 if(!video_set_mode(videomodes))
                 {
@@ -37906,7 +37906,7 @@ void menu_options_config()     //  OX. Load from / save to default.cfg. Restore 
                 break;
             case 2:
                 clearsettings();
-                //borShutdown(2, "\nSettings Loaded From Default.cfg. Restart Required.\n\n");
+                //borShutdown(2, "\nSettings Loaded From default_6500.cfg. Restart Required.\n\n");
                 init_videomodes(0);
                 if(!video_set_mode(videomodes))
                 {

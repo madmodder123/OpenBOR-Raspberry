@@ -445,11 +445,11 @@ static void initMenu(int type)
 
 #ifdef ANDROID
 	isWide = (float)nativeHeight/(float)nativeWidth < 3.0f/4.0f;
-	isFull = 1;
+
 	bpp = 32;
 	savedata.hwscale = 0.0f;
 #endif
-
+	isFull = 1;
 	pixelformat = PIXEL_x8;
 
 	savedata.fullscreen = isFull;
